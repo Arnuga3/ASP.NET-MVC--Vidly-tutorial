@@ -10,6 +10,12 @@ namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
+        // GET: Movies
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         // GET: Movies/Ramdom
         public ActionResult Random()
         {
