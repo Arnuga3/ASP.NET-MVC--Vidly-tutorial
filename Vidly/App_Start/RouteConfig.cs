@@ -15,6 +15,14 @@ namespace Vidly
 
             routes.MapMvcAttributeRoutes();
 
+            routes.MapRoute(
+                name: "Default",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            );
+
+
+
             /*OLD VERSIONS OF MVC 
             routes.MapRoute(
                 "MoviesByReleaseDate",
@@ -22,20 +30,6 @@ namespace Vidly
                 new { controller = "Movies", action = "ByReleaseDate"},
                 new { year = @"\d{4}", month = @"\d{2}"}
                 );*/
-
-
-            routes.MapRoute(
-                "CustomerByIdDisplay",
-                "{controller}/{id}",
-                new { controller = "Customers", action = "Index"}
-            );
-
-
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
 
         }
     }

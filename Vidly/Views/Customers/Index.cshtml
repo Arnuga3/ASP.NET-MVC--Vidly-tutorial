@@ -9,7 +9,7 @@
     <ul class="list-group">
         @foreach (var customer in Model.Customers)
         {
-            <li class="list-group-item">@Html.ActionLink(@customer.Name, "Index", "Customers", new { id = @customer.Id}, null)</li>
+            <li class="list-group-item">@Html.ActionLink(@customer.Name, "ById", "Customers", new { id = @customer.Id}, null)</li>
         }
     </ul>
 }

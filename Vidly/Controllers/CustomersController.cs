@@ -11,7 +11,7 @@ namespace Vidly.Controllers
     public class CustomersController : Controller
     {
         // GET: Customers
-        public ActionResult Index(int? id)
+        public ActionResult Index()
         {
         
             var customers = new List<Customer>
@@ -20,17 +20,6 @@ namespace Vidly.Controllers
                 new Customer { Name = "Mary Williams", Id = 2 }
             };
 
-            if (id.HasValue)
-            {
-                foreach (var customer in customers)
-                {
-                    if (customer.Id == id)
-                    {
-                        return Content(customer.Name);
-                    }
-                }
-            }
-
             var viewModel = new CustomerList
             {
                 Customers = customers
@@ -38,6 +27,27 @@ namespace Vidly.Controllers
 
             return View(viewModel);
             
+        }
+
+        [Route("Customers/{id}")]
+
+        public ActionResult ById(int? id)
+        {
+            var customers = new List<Customer>
+            {
+                new Customer { Name = "John Smith" , Id = 1},
+                new Customer { Name = "Mary Williams", Id = 2 }
+            };
+
+            foreach (var customer in customers)
+            {
+                if (customer.Id == id)
+                {
+                    return View(customer);
+                }
+            }
+
+            return Content("Not found.");
         }
     }
 }
