@@ -1,5 +1,19 @@
-﻿@{
+﻿@model Vidly.ViewModels.MoviesList
+@{
     ViewBag.Title = "Movies";
 }
 <h2>@ViewBag.Title</h2>
 
+@if (Model.ListMovies.Count > 0)
+{
+    <ul class="list-group">
+        @foreach (var movie in Model.ListMovies)
+        {
+            <li class="list-group-item">@movie.Name</li>
+        }
+    </ul>
+}
+else
+{
+    <text>We don't have any customers yet.</text>
+}

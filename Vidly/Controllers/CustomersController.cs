@@ -29,9 +29,9 @@ namespace Vidly.Controllers
             
         }
 
-        [Route("Customers/{id}")]
+        [Route("Customers/Details/{id}")]
 
-        public ActionResult ById(int? id)
+        public ActionResult Details(int? id)
         {
             var customers = new List<Customer>
             {
