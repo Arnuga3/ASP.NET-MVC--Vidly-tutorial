@@ -211,13 +211,41 @@
     <Compile Include="Migrations\201607112328386_AddSubscribedCustomer.Designer.cs">
       <DependentUpon>201607112328386_AddSubscribedCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201607112337118_AddMemebershipType.cs" />
-    <Compile Include="Migrations\201607112337118_AddMemebershipType.Designer.cs">
-      <DependentUpon>201607112337118_AddMemebershipType.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201607112340598_PopulateMembershipTypes.cs" />
     <Compile Include="Migrations\201607112340598_PopulateMembershipTypes.Designer.cs">
       <DependentUpon>201607112340598_PopulateMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607172141067_AddDataAnnotationToCustomerName.cs" />
+    <Compile Include="Migrations\201607172141067_AddDataAnnotationToCustomerName.Designer.cs">
+      <DependentUpon>201607172141067_AddDataAnnotationToCustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607182207343_AddedNamePropMembershipType.cs" />
+    <Compile Include="Migrations\201607182207343_AddedNamePropMembershipType.Designer.cs">
+      <DependentUpon>201607182207343_AddedNamePropMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607182209320_NamePropMembershipTypeVarcharSet.cs" />
+    <Compile Include="Migrations\201607182209320_NamePropMembershipTypeVarcharSet.Designer.cs">
+      <DependentUpon>201607182209320_NamePropMembershipTypeVarcharSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607182216344_UpdateRecordsMemType.cs" />
+    <Compile Include="Migrations\201607182216344_UpdateRecordsMemType.Designer.cs">
+      <DependentUpon>201607182216344_UpdateRecordsMemType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607182225444_AddedBirthdatePropCustomer.cs" />
+    <Compile Include="Migrations\201607182225444_AddedBirthdatePropCustomer.Designer.cs">
+      <DependentUpon>201607182225444_AddedBirthdatePropCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607182233017_AddedBirthdatePropCustomer1.cs" />
+    <Compile Include="Migrations\201607182233017_AddedBirthdatePropCustomer1.Designer.cs">
+      <DependentUpon>201607182233017_AddedBirthdatePropCustomer1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607182259364_AddedPropsMovie.cs" />
+    <Compile Include="Migrations\201607182259364_AddedPropsMovie.Designer.cs">
+      <DependentUpon>201607182259364_AddedPropsMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607182350328_AddedDataMovie.cs" />
+    <Compile Include="Migrations\201607182350328_AddedDataMovie.Designer.cs">
+      <DependentUpon>201607182350328_AddedDataMovie.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -228,7 +256,6 @@
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModels\CustomerList.cs" />
     <Compile Include="ViewModels\MoviesList.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -315,11 +342,32 @@
     <EmbeddedResource Include="Migrations\201607112328386_AddSubscribedCustomer.resx">
       <DependentUpon>201607112328386_AddSubscribedCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607112337118_AddMemebershipType.resx">
-      <DependentUpon>201607112337118_AddMemebershipType.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607112340598_PopulateMembershipTypes.resx">
       <DependentUpon>201607112340598_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607172141067_AddDataAnnotationToCustomerName.resx">
+      <DependentUpon>201607172141067_AddDataAnnotationToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607182207343_AddedNamePropMembershipType.resx">
+      <DependentUpon>201607182207343_AddedNamePropMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607182209320_NamePropMembershipTypeVarcharSet.resx">
+      <DependentUpon>201607182209320_NamePropMembershipTypeVarcharSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607182216344_UpdateRecordsMemType.resx">
+      <DependentUpon>201607182216344_UpdateRecordsMemType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607182225444_AddedBirthdatePropCustomer.resx">
+      <DependentUpon>201607182225444_AddedBirthdatePropCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607182233017_AddedBirthdatePropCustomer1.resx">
+      <DependentUpon>201607182233017_AddedBirthdatePropCustomer1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607182259364_AddedPropsMovie.resx">
+      <DependentUpon>201607182259364_AddedPropsMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607182350328_AddedDataMovie.resx">
+      <DependentUpon>201607182350328_AddedDataMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

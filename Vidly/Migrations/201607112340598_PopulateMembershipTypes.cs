@@ -7,7 +7,7 @@ namespace Vidly.Migrations
     {
         public override void Up()
         {
-            Sql("sp_rename 'MemebershipTypes', 'MembershipTypes'");
+            Sql("sp_rename 'MembershipTypes', 'MembershipTypes'");
             Sql("INSERT INTO MembershipTypes (Id, SignUpFee, DurationInMonths, DiscountRate) VALUES (1, 0, 0, 0)");
             Sql("INSERT INTO MembershipTypes (Id, SignUpFee, DurationInMonths, DiscountRate) VALUES (2, 30, 1, 10)");
             Sql("INSERT INTO MembershipTypes (Id, SignUpFee, DurationInMonths, DiscountRate) VALUES (3, 90, 3, 15)");

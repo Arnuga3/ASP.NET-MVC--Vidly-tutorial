@@ -1,19 +1,21 @@
-﻿@model Vidly.ViewModels.CustomerList
-@{
-    ViewBag.Title = "Customers";
-}
-<h2>@ViewBag.Title</h2>
+﻿@model IEnumerable<Vidly.Models.Customer>
 
-@if (Model.Customers.Count > 0)
-{
-    <ul class="list-group">
-        @foreach (var customer in Model.Customers)
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Customer</th>
+            <th>Discount rate</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var customer in Model)
         {
-            <li class="list-group-item">@Html.ActionLink(@customer.Name, "Details", "Customers", new { id = @customer.Id}, null)</li>
+            <tr>
+                <td>@Html.ActionLink(@customer.Name, "Details", "Customers", new { id = @customer.Id }, null)</td>
+                <td>@customer.MembershipType.Name</td>
+            </tr>
         }
-    </ul>
-}
-else
-{
-    <text>We don't have any customers yet.</text>
-}
+
+    </tbody>
+</table>
