@@ -10,23 +10,46 @@ namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
+        //db object
+        private ApplicationDbContext _context;
+
+        //Constructor
+        public MoviesController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        //Override the dispose methode, properly dispose the db object
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         [Route("Movies")]
 
-        // GET: Movies/Ramdom
+        // GET: Movies
         public ActionResult Index()
         {
-            var movies = new List<Movie>
-            {
-                new Movie { Name = "Shrek" },
-                new Movie { Name = "Avengers" }
-            };
+            var movies = _context.Movies.ToList();
 
-            var viewModel = new MoviesList
-            {
-                ListMovies = movies
-            };
+            return View(movies);
+        }
 
-            return View(viewModel);
+        [Route("Movies/Details/{id}")]
+
+        public ActionResult Details(int? id)
+        {
+            var movies = _context.Movies.ToList();
+
+            foreach (var movie in movies)
+            {
+                if (movie.Id == id)
+                {
+                    return View(movie);
+                }
+            }
+
+            return Content("Not found.");
         }
 
     }

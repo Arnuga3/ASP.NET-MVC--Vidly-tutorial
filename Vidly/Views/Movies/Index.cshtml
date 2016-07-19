@@ -1,19 +1,33 @@
-﻿@model Vidly.ViewModels.MoviesList
-@{
-    ViewBag.Title = "Movies";
-}
-<h2>@ViewBag.Title</h2>
+﻿@model IEnumerable<Vidly.Models.Movie>
 
-@if (Model.ListMovies.Count > 0)
-{
-    <ul class="list-group">
-        @foreach (var movie in Model.ListMovies)
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Customer</th>
+            <th>Genre</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @if (@Model.ToList().Count > 0)
         {
-            <li class="list-group-item">@movie.Name</li>
+                foreach (var movie in @Model)
+                { 
+                    <tr>
+                        <td>@Html.ActionLink(@movie.Name, "Details", "Movies", new { id = @movie.Id }, null)</td>
+                        <td>@movie.Genre</td>
+                    </tr>
+                }
         }
-    </ul>
-}
-else
-{
-    <text>We don't have any customers yet.</text>
-}
+        else
+        {
+            <tr>
+                <td>We don't have any customers yet.</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
